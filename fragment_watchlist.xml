@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
+        android:id="@+id/watchListLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        tools:context=".ui.home.WatchListFragment">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/weekly_relative_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/weekly_tv_shows_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="10dp"
+                    android:text="@string/weekly_tv_shows"
+                    android:textColor="@color/color_font"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/weekly_tv_shows_recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/weekly_tv_shows_title"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/cardview_tv_shows_watchlist_item_layout" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/done_image_weekly"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/weekly_tv_shows_title"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/weekly_image"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_weekly_foreground"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/done_message_weekly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/done_image_weekly"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/empty_weekly_tv_shows"
+                    android:textColor="@color/color_font"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/binge_worthy_tv_shows_relative_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weekly_relative_layout">
+
+                <TextView
+                    android:id="@+id/binge_worthy_tv_shows"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="10dp"
+                    android:text="@string/binge_worthy_tv_shows"
+                    android:textColor="@color/color_font"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/binge_worthy_tv_shows_recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/binge_worthy_tv_shows"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/cardview_tv_shows_watchlist_item_layout" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/done_image_binge"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/binge_worthy_tv_shows"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/binge_image"
+                    android:src="@mipmap/ic_binge_foreground"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/done_message_binge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/done_image_binge"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/empty_binge_worthy_tv_shows"
+                    android:textColor="@color/color_font"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/binge_worthy_tv_shows_relative_layout">
+
+                <TextView
+                    android:id="@+id/my_movies_watchlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="10dp"
+                    android:text="@string/my_movies"
+                    android:textColor="@color/color_font"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/my_movies_watchlist_recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/my_movies_watchlist"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/cardview_movies_watchlist_layout" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/done_image_movies"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/my_movies_watchlist"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/movie_image"
+                    android:src="@mipmap/ic_movie"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/done_message_movies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/done_image_movies"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/empty_movies_list"
+                    android:textColor="@color/color_font"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</layout>
